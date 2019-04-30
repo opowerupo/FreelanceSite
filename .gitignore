@@ -1,3 +1,6 @@
 .idea/**
 .idea/vcs.xml
 .idea/libraries/KotlinJavaRuntime.xml
+output/production/Solution/AppKt.class
+output/production/Solution/META-INF/Solution.kotlin_module
+Solution.iml
