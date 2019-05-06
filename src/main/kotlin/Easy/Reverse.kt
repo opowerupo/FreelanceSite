@@ -19,10 +19,26 @@ package main.kotlin.Easy
  * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
  */
 fun reverse(x: Int): Int {
-    println(x)
-    return 0;
+    var i: Int = x
+    var m: Int = 0
+    var res: Int  = 0
+
+    while(i != 0){
+        m = i % 10
+        i /= 10
+
+        //整数边界判断
+        if (res > Int.MAX_VALUE / 10 || res == Int.MAX_VALUE / 10 && m > 7) return 0
+        if (res < Int.MIN_VALUE / 10 || res == Int.MIN_VALUE / 10 && m < -8) return 0
+
+        res = res * 10 + m
+
+    }
+
+    return res
 }
 
 fun main(){
-    reverse(1)
+    val result: Int = reverse(123)
+    println(result)
 }

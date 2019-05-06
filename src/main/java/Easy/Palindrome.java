@@ -22,13 +22,23 @@ package main.java.Easy;
  */
 public class Palindrome {
     public boolean isPalindrom(int x){
-
-        return true;
+        if(x < 0 || (x % 10 == 0 && x != 0)){
+            return false;
+        }
+        int num = 0;
+        while(x > num){
+            num = num * 10 + x % 10;
+            x /= 10;
+        }
+        if(x == num || x == num/10){
+            return true;
+        }
+        return false;
     }
 
     public static void main(String[] args){
         Palindrome pal = new Palindrome();
-        boolean res =  pal.isPalindrom(1234321);
+        boolean res =  pal.isPalindrom(10);
         System.out.println(res);
     }
 }

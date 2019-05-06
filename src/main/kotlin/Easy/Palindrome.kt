@@ -19,11 +19,23 @@ package main.kotlin.Easy
  * 进阶:
  * 你能不将整数转为字符串来解决这个问题吗？
  */
-fun isPalindrome(x: Int):Boolean{
-    println(x);
-    return true;
+fun isPalindrome(x: Int): Boolean{
+    if(x < 0 || (x%10 == 0 && x != 0)){
+        return false;
+    }
+    var num: Int = 0;
+    var i: Int = x
+    while( i > num){
+       num = num * 10 + i % 10
+       i /= 10
+    }
+    if(num == i || i == num/10){
+        return true
+    }
+    return false;
 }
 
 fun main(){
-    isPalindrome(123);
+    val res: Boolean = isPalindrome(121)
+    print(res)
 }
