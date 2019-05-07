@@ -1,7 +1,19 @@
-.idea/**
-.idea/vcs.xml
-.idea/libraries/KotlinJavaRuntime.xml
-output/production/Solution/META-INF/Solution.kotlin_module
+/target
+/output
+/classes
+/checkouts
+/.lein-*
+/.env
 *.iml
-*.class
+.idea
+.DS_Store
+*/target
+.svn
+.project
+.settings
+.classpath
+logs
+/log
+/tmp
+hotspot.log
 
