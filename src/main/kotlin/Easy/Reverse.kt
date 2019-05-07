@@ -21,9 +21,9 @@ package main.kotlin.Easy
 fun reverse(x: Int): Int {
     var i: Int = x
     var m: Int = 0
-    var res: Int  = 0
+    var res: Int = 0
 
-    while(i != 0){
+    while (i != 0) {
         m = i % 10
         i /= 10
 
@@ -37,7 +37,7 @@ fun reverse(x: Int): Int {
     return res
 }
 
-fun main(){
+fun main() {
     val result: Int = reverse(123)
     println(result)
 }

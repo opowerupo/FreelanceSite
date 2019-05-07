@@ -21,24 +21,24 @@ package main.java.Easy;
  * 你能不将整数转为字符串来解决这个问题吗？
  */
 public class Palindrome {
-    public boolean isPalindrom(int x){
-        if(x < 0 || (x % 10 == 0 && x != 0)){
+    public boolean isPalindrom(int x) {
+        if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
         int num = 0;
-        while(x > num){
+        while (x > num) {
             num = num * 10 + x % 10;
             x /= 10;
         }
-        if(x == num || x == num/10){
+        if (x == num || x == num / 10) {
             return true;
         }
         return false;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Palindrome pal = new Palindrome();
-        boolean res =  pal.isPalindrom(10);
+        boolean res = pal.isPalindrom(10);
         System.out.println(res);
     }
 }

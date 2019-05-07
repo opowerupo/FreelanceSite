@@ -20,12 +20,12 @@ package main.kotlin.Medium
  *      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
  */
 
-fun lengthOfLongestSubstring(s: String): Int{
+fun lengthOfLongestSubstring(s: String): Int {
 
-    return 0;
+    return 0
 }
 
-fun main(){
-    var res = lengthOfLongestSubstring("abcabcdef");
-    println(res);
+fun main() {
+    var res = lengthOfLongestSubstring("abcabcdef")
+    println(res)
 }

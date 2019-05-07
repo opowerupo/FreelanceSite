@@ -12,12 +12,12 @@ package main.java.Medium;
  */
 public class AddTwoNumbers {
 
-    public ListNode addTwoNumbers(ListNode L1 , ListNode L2){
+    public ListNode addTwoNumbers(ListNode L1, ListNode L2) {
 
         return L2;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         ListNode l1n1 = new ListNode(3);
         ListNode l1n2 = new ListNode(6);
@@ -36,9 +36,9 @@ public class AddTwoNumbers {
         l2n2.next = l2n3;
 
         AddTwoNumbers atn = new AddTwoNumbers();
-        ListNode res = atn.addTwoNumbers(l1n1,l2n1);
+        ListNode res = atn.addTwoNumbers(l1n1, l2n1);
         StringBuilder resBuilder = new StringBuilder();
-        while(res.next != null){
+        while (res.next != null) {
             resBuilder.append(res.val).append("->");
             res = res.next;
         }

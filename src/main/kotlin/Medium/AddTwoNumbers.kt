@@ -11,11 +11,11 @@ package main.kotlin.Medium
  * 原因：342 + 465 = 807
  */
 
-class ListNode(var `val`: Int){
+class ListNode(var `val`: Int) {
     var next: ListNode? = null
 }
 
-fun addTwoNumbers(L1: ListNode?, L2: ListNode?): ListNode?{
+fun addTwoNumbers(L1: ListNode?, L2: ListNode?): ListNode? {
     println(message = L1?.`val`)
     return null
 }

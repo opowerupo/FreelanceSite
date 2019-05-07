@@ -63,23 +63,23 @@ public class RomanToInt {
         romanMap.put('M',1000);
     }
 
-    public int romanToInt(String roman){
+    public int romanToInt(String roman) {
         int len = roman.length() - 1;
         int res = romanMap.get(roman.charAt(len));
 
-        for(int i = len; i > 0; i--){
+        for (int i = len; i > 0; i--) {
             res = sumTwoRoman(roman.charAt(i),roman.charAt(i - 1),res);
         }
 
         return res;
     }
 
-    private int sumTwoRoman(char r1, char r2, int res){
+    private int sumTwoRoman(char r1, char r2, int res) {
         int i1 = romanMap.get(r1);
         int i2 = romanMap.get(r2);
         int i3 = i1 + i2;
 
-        if(i1 > i2 && (i3 % 6 == 0 || i3 % 11 == 0)){
+        if (i1 > i2 && (i3 % 6 == 0 || i3 % 11 == 0)) {
             res -= i2;
         } else{
             res += i2;
@@ -89,7 +89,7 @@ public class RomanToInt {
     }
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         RomanToInt rti = new RomanToInt();
         int result = rti.romanToInt("LIV");
         System.out.println(result);

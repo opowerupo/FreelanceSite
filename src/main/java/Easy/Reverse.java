@@ -19,10 +19,10 @@ package main.java.Easy;
  * 假设我们的环境只能存储得下 32 位的有符号整数，则其数值范围为 [−2^31,  2^31 − 1]。请根据这个假设，如果反转后整数溢出那么就返回 0。
  */
 public class Reverse {
-    public int reverse(int x){
+    public int reverse(int x) {
         int m  = 0;
         int res = 0;
-        while(x != 0){
+        while (x != 0) {
             m  = x % 10;
             x = x / 10;
 
@@ -32,11 +32,10 @@ public class Reverse {
 
             res = res * 10 + m;
         }
-
         return res;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Reverse rev = new Reverse();
         int res = rev.reverse(-123);
         System.out.println(res);

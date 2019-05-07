@@ -24,7 +24,7 @@ public class LongestSubstring {
         return 0;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         LongestSubstring lss = new LongestSubstring();
         int res = lss.lengthOfLongsetSubstring("abbcdef");
         System.out.println(res);

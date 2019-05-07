@@ -61,22 +61,22 @@ class RomanToInt {
         romanMap['M'] = 1000
     }
 
-    fun romanToInt(roman: String): Int{
+    fun romanToInt(roman: String): Int {
         val len: Int = roman.length - 1;
         var res: Int? = romanMap[roman.get(len)]
 
-        for (i: Int in len downTo 1){
-            res = sumTwoRoman(roman.get(i),roman.get(i-1),res)
+        for (i: Int in len downTo 1) {
+            res = sumTwoRoman(roman.get(i), roman.get(i - 1), res)
         }
         return res!!
     }
 
-    private fun sumTwoRoman(c1: Char?,c2: Char?,res: Int?): Int? {
+    private fun sumTwoRoman(c1: Char?, c2: Char?, res: Int?): Int? {
         val i1: Int? = romanMap[c1]
         val i2: Int? = romanMap[c2]
         val i3: Int = i1!! + i2!!
         var r: Int = res!!
-        if(i1 > i2 &&(i3 % 6 == 0 || i3 % 11 == 0)){
+        if (i1 > i2 && (i3 % 6 == 0 || i3 % 11 == 0)) {
             r -= i2
         }else{
             r += i2

@@ -11,20 +11,20 @@ package main.kotlin.Easy
  * 所以返回 [0, 1]
  */
 
-fun twoSum(nums: IntArray,target: Int): IntArray? {
-    val map:HashMap<Int,Int> = hashMapOf<Int,Int>()
-    for(i in nums.indices){
-        if(map.containsKey(nums[i])) {
-            return intArrayOf(map.get(nums[i])!!,i)
+fun twoSum(nums: IntArray, target: Int): IntArray? {
+    val map: HashMap<Int, Int> = hashMapOf<Int, Int>()
+    for (i in nums.indices) {
+        if (map.containsKey(nums[i])) {
+            return intArrayOf(map.get(nums[i])!!, i)
         }
         map.put(target - nums[i], i)
     }
     return null
 }
 
-fun main(){
-    val result = twoSum(intArrayOf(2,8,7,3),9)
-    for(i in result!!) {
+fun main() {
+    val result = twoSum(intArrayOf(2, 8, 7, 3), 9)
+    for (i in result!!) {
         print(i)
     }
 }
