@@ -71,12 +71,12 @@ class RomanToInt {
         return res!!
     }
 
-    fun sumTwoRoman(c1: Char?,c2: Char?,res: Int?): Int? {
+    private fun sumTwoRoman(c1: Char?,c2: Char?,res: Int?): Int? {
         val i1: Int? = romanMap[c1]
         val i2: Int? = romanMap[c2]
-        val i3: Int? = i1!! + i2!!
+        val i3: Int = i1!! + i2!!
         var r: Int = res!!
-        if(i1!! > i2!! &&(i3!!%6 == 0 || i3!!%11 == 0)){
+        if(i1 > i2 &&(i3 % 6 == 0 || i3 % 11 == 0)){
             r -= i2
         }else{
             r += i2

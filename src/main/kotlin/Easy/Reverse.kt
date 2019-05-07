@@ -32,7 +32,6 @@ fun reverse(x: Int): Int {
         if (res < Int.MIN_VALUE / 10 || res == Int.MIN_VALUE / 10 && m < -8) return 0
 
         res = res * 10 + m
-
     }
 
     return res
