@@ -51,7 +51,7 @@ import java.util.HashMap;
  */
 public class RomanToInt {
 
-    private HashMap<Character, Integer> romanMap = new HashMap<Character, Integer>();
+    private final HashMap<Character, Integer> romanMap = new HashMap<Character, Integer>();
 
     {
         romanMap.put('I',1);
@@ -75,14 +75,12 @@ public class RomanToInt {
     public int sumTwoRoman(char r1,char r2,int res){
         int i1 = romanMap.get(r1);
         int i2 = romanMap.get(r2);
-        int i3 = i1+i2;
-
-        if(i2 < i1 && (i3%6 == 0 || i3%11 == 0)){
+        int i3 = i1 + i2;
+        if(i1 > i2 && (i3 % 6 == 0 || i3 % 11 == 0)){
             res -= i2;
         } else{
             res += i2;
         }
-
         return res;
     }
 
