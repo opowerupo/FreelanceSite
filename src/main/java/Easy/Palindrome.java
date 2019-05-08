@@ -25,6 +25,7 @@ public class Palindrome {
         if (x < 0 || (x % 10 == 0 && x != 0)) {
             return false;
         }
+
         int num = 0;
         while (x > num) {
             num = num * 10 + x % 10;
@@ -33,6 +34,7 @@ public class Palindrome {
         if (x == num || x == num / 10) {
             return true;
         }
+
         return false;
     }
 
