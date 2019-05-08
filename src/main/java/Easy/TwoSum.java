@@ -1,7 +1,6 @@
 package main.java.Easy;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * 给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
@@ -15,8 +14,7 @@ import java.util.Map;
 
 public class TwoSum {
     public int[] twoSum(int[] nums, int target) {
-
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
         int len = nums.length;
 
         for (int i = 0; i < len; i++) {
