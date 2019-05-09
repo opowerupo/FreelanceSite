@@ -19,7 +19,7 @@ package main.kotlin.Easy
  * 进阶:
  * 你能不将整数转为字符串来解决这个问题吗？
  */
-fun isPalindrome(x: Int): Boolean{
+private fun isPalindrome(x: Int): Boolean {
     if (x < 0 || (x % 10 == 0 && x != 0)) {
         return false;
     }
