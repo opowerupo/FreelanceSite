@@ -17,6 +17,7 @@ package main.java.Easy;
  * 所有输入只包含小写字母 a-z 。
  */
 public class LongestCommonPrefix {
+
     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) {
             return "";
