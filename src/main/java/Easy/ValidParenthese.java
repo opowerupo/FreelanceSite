@@ -1,5 +1,8 @@
 package main.java.Easy;
 
+import java.util.HashMap;
+import java.util.Stack;
+
 /**
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
  *
@@ -27,13 +30,46 @@ package main.java.Easy;
  * 输出: true
  */
 public class ValidParenthese {
+    HashMap<Character, Character> hm = new HashMap<>();
+
+    {
+        hm.put('(', ')');
+        hm.put('[', ']');
+        hm.put('{', '}');
+    }
 
     public boolean isValid(String s) {
+        int len = s.length();
 
-        return false;
+        if ("".equals(s)) return true;
+        if (len < 2 || len % 2 != 0) return false;
+
+        Stack<Character> sc = new Stack<Character>();
+        boolean res = true;
+        char c = '1';
+
+        for (int i = 0; i < len; i++) {
+            c = s.charAt(i);
+            if (hm.containsKey(c)) {
+                sc.push(c);
+            } else if (c == ')' || c == ']' || c == '}') {
+                if (sc.isEmpty() || c != hm.get(sc.pop())) {
+                    res = false;
+                    break;
+                }
+            } else {
+                res = false;
+                break;
+            }
+        }
+        if (!sc.isEmpty()) res = false;
+
+        return res;
     }
 
     public static void main(String[] args) {
-
+        ValidParenthese vp = new ValidParenthese();
+        boolean res = vp.isValid("(({)})");
+        System.out.println(res);
     }
 }
