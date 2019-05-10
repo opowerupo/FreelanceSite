@@ -30,7 +30,7 @@ import java.util.Stack;
  * 输出: true
  */
 public class ValidParenthese {
-    HashMap<Character, Character> hm = new HashMap<>();
+    private HashMap<Character, Character> hm = new HashMap<>();
 
     {
         hm.put('(', ')');
@@ -45,26 +45,19 @@ public class ValidParenthese {
         if (len < 2 || len % 2 != 0) return false;
 
         Stack<Character> sc = new Stack<Character>();
-        boolean res = true;
         char c = '1';
 
         for (int i = 0; i < len; i++) {
             c = s.charAt(i);
             if (hm.containsKey(c)) {
                 sc.push(c);
-            } else if (c == ')' || c == ']' || c == '}') {
-                if (sc.isEmpty() || c != hm.get(sc.pop())) {
-                    res = false;
-                    break;
-                }
-            } else {
-                res = false;
-                break;
+            } else if (sc.isEmpty() || c != hm.get(sc.pop())) {
+                return false;
             }
         }
-        if (!sc.isEmpty()) res = false;
+        if (sc.isEmpty()) return true;
 
-        return res;
+        return false;
     }
 
     public static void main(String[] args) {
