@@ -1,4 +1,4 @@
-package main.java.Medium;
+package main.java.util;
 
 /**
  * AddTwoNumbers的工具类
@@ -7,9 +7,10 @@ package main.java.Medium;
  */
 
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x){
+    public int val;
+    public ListNode next;
+
+    public ListNode(int x) {
         val = x;
     }
 }

@@ -31,8 +31,8 @@ import java.util.Stack
 
 class ValidParenthese {
 
-    private var hm: HashMap<Char, Char> = hashMapOf<Char, Char>()
-    private var stack: Stack<Char> = Stack<Char>()
+    private val hm: HashMap<Char, Char> = hashMapOf<Char, Char>()
+    private val stack: Stack<Char> = Stack<Char>()
 
     init {
         hm['('] = ')'
@@ -62,7 +62,7 @@ class ValidParenthese {
 
 
 fun main() {
-    var vp = ValidParenthese();
-    var res = vp.isValid("(")
+    val vp = ValidParenthese();
+    val res: Boolean = vp.isValid("(")
     print(res)
 }
