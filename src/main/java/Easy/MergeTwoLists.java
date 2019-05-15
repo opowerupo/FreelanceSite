@@ -12,31 +12,44 @@ import main.java.util.ListNode;
 public class MergeTwoLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode res = l1.val < l2.val ? l1 : l2;
-        ListNode temp = l1;
-        while (l1.next != null) {
-            if (l1.val < l2.val) {
-                temp = l1.next;
-                l1.next = l2;
-                l1 = temp;
-            } else {
+        ListNode rspHead = new ListNode(0);
+        ListNode rsp = rspHead;
 
+        while (l1 != null && l2 != null) {
+            if (l1.val > l2.val) {
+                rspHead.next = l2;
+                l2 = l2.next;
+            } else {
+                rspHead.next = l1;
+                l1 = l1.next;
             }
+            rspHead = rspHead.next;
         }
 
-        return null;
+        if (l1 == null) {
+            rspHead.next = l2;
+        } else {
+            rspHead.next = l1;
+        }
+
+        ListNode res = rsp.next;
+
+        rsp.next = null;
+        rsp = null;
+
+        return res;
     }
 
     public static void main(String[] args) {
 
-        ListNode l1n1 = new ListNode(3);
-        ListNode l1n2 = new ListNode(6);
-        ListNode l1n3 = new ListNode(7);
-        ListNode l1n4 = new ListNode(9);
+        ListNode l1n1 = new ListNode(1);
+        ListNode l1n2 = new ListNode(2);
+        ListNode l1n3 = new ListNode(4);
+//        ListNode l1n4 = new ListNode(9);
 
         l1n1.next = l1n2;
         l1n2.next = l1n3;
-        l1n3.next = l1n4;
+//        l1n3.next = l1n4;
 
         ListNode l2n1 = new ListNode(1);
         ListNode l2n2 = new ListNode(2);
