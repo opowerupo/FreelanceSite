@@ -1,6 +1,6 @@
 package main.kotlin.Easy
 
-import main.java.common.module.ListNode
+import main.common.module.ListNode
 
 
 /**

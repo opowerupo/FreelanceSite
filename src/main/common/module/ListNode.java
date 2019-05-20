@@ -1,4 +1,4 @@
-package main.java.common.module;
+package main.common.module;
 
 /**
  * AddTwoNumbers的工具类
