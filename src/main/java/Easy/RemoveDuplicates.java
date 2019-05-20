@@ -21,7 +21,14 @@ public class RemoveDuplicates {
         int len = nums.length - 1;
         for (int i = 0; i < len; i++) {
             if (nums[i] < nums[i + 1]) {
-
+                moveToLeft(nums, i - step, step);
+                i = i - step;
+                step = 0;
+                res++;
+            } else if (nums[i] == nums[i + 1]) {
+                step++;
+            } else {
+                break;
             }
         }
 
