@@ -13,46 +13,32 @@ package main.java.Easy;
  * 给定 nums = [0,0,0,1,1,2,3,3,4],
  * 函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
  * 你不需要考虑数组中超出新长度后面的元素。
+ *
+ * 解题思路：
+ * 数组完成排序后，我们可以放置两个指针 i 和 j，其中 i 是慢指针，而 j 是快指针。
+ * 只要 nums[i] == nums[j]，我们就增加 j 以跳过重复项，
+ * 当我们遇到 nums[j] != nums[i]时，跳过重复项的运行已经结束，因此我们必须把它的值复制到 nums[i+1]。
+ * 然后递增 i，接着我们将再次重复相同的过程，直到 j 到达数组的末尾为止。
+ *
  */
 public class RemoveDuplicates {
     public int removeDuplicates(int[] nums) {
-        int res = 1;
-        int step = 0;
-        int len = nums.length - 1;
-        for (int i = 0; i < len; i++) {
-            if (nums[i] < nums[i + 1]) {
-                moveToLeft(nums, i - step, step);
-                i = i - step;
-                step = 0;
-                res++;
-            } else if (nums[i] == nums[i + 1]) {
-                step++;
-            } else {
-                break;
+        if (nums.length == 0) {
+            return 0;
+        }
+        int i = 0;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[i] != nums[j]) {
+                i++;
+                nums[i] = nums[j];
             }
         }
-
-        return res;
-    }
-
-    private void moveToLeft(int[] nums, int start, int step) {
-        int len = nums.length - step;
-        for (int i = start; i < len; i++) {
-            nums[i] = nums[i + step];
-        }
-        StringBuilder resBuilder = new StringBuilder("[");
-        for (int i : nums) {
-            resBuilder.append(i).append(",");
-        }
-        resBuilder.delete(resBuilder.length() - 1, resBuilder.length());
-        resBuilder.append("]");
-
-        System.out.println(resBuilder.toString());
+        return i + 1;
     }
 
     public static void main(String[] args) {
         RemoveDuplicates rdl = new RemoveDuplicates();
-        int[] nums = new int[]{1};
+        int[] nums = new int[]{1, 1, 1, 2};
         int res = rdl.removeDuplicates(nums);
         StringBuilder resBuilder = new StringBuilder(res + " : [");
         for (int i : nums) {
