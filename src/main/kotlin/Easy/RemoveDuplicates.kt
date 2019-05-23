@@ -1,4 +1,4 @@
-package main.java.Easy;
+package main.kotlin.Easy
 
 /**
  * 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
@@ -21,33 +21,28 @@ package main.java.Easy;
  * 然后递增 i，接着我们将再次重复相同的过程，直到 j 到达数组的末尾为止。
  *
  */
-
-public class RemoveDuplicates {
-    public int removeDuplicates(int[] nums) {
-        if (nums.length == 0) {
-            return 0;
+fun removeDuplicates(nums: IntArray): Int {
+    var i: Int = 0
+    for (j: Int in 1..nums.size - 1) {
+        if (nums[j] != nums[i]) {
+            i++
+            nums[i] = nums[j]
         }
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[i] != nums[j]) {
-                i++;
-                nums[i] = nums[j];
-            }
-        }
-        return i + 1;
     }
+    return i + 1
+}
 
-    public static void main(String[] args) {
-        RemoveDuplicates rdl = new RemoveDuplicates();
-        int[] nums = new int[]{1, 1, 1, 2};
-        int res = rdl.removeDuplicates(nums);
-        StringBuilder resBuilder = new StringBuilder(res + " : [");
-        for (int i : nums) {
-            resBuilder.append(i).append(",");
-        }
-        resBuilder.delete(resBuilder.length() - 1, resBuilder.length());
-        resBuilder.append("]");
-
-        System.out.println(resBuilder.toString());
+fun main() {
+    val nums: IntArray = intArrayOf(1, 1, 2, 3, 3, 4, 4, 5, 6, 7, 8, 8, 8, 9, 10, 10, 12, 12, 12, 12)
+    val res: Int = removeDuplicates(nums)
+    val resStr = StringBuilder()
+    resStr.append(res)
+    resStr.append(": [")
+    for (i in nums) {
+        resStr.append(i).append(",");
     }
+    resStr.delete(resStr.length - 1, resStr.length);
+    resStr.append("]");
+
+    println(resStr)
 }
