@@ -22,6 +22,7 @@ package main.kotlin.Easy
  *
  */
 fun removeDuplicates(nums: IntArray): Int {
+    if (nums.size == 0) return 0
     var i: Int = 0
     for (j: Int in 1..nums.size - 1) {
         if (nums[j] != nums[i]) {
