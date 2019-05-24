@@ -17,13 +17,19 @@ package main.java.Easy;
  * 你不需要考虑数组中超出新长度后面的元素。
  */
 public class RemoveElement {
-    public int removeElement(int[] nums, int value) {
-
-        return 0;
+    public int removeElement(int[] nums, int val) {
+        int i = 0;
+        for (int j = 0; j < nums.length; j++) {
+            if (nums[j] != val) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{1, 2, 3, 4};
+        int[] nums = new int[]{1, 2, 2, 3, 3, 3, 5, 6, 3, 4, 3};
         RemoveElement re = new RemoveElement();
         int res = re.removeElement(nums, 3);
         StringBuilder resBuilder = new StringBuilder(res + " : [");
@@ -34,6 +40,5 @@ public class RemoveElement {
         resBuilder.append("]");
 
         System.out.println(resBuilder.toString());
-
     }
 }
