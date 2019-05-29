@@ -28,6 +28,10 @@ import java.util.Stack;
  * 示例 5:
  * 输入: "{[]}"
  * 输出: true
+ *
+ * 解题：
+ * 利用 栈 数据结构的特性，依次入栈遇到右括号就出 栈 匹配，
+ * 不能匹配就返回false，能够匹配就继续，直到结束，栈如果是空返回true。
  */
 public class ValidParenthese {
     private HashMap<Character, Character> hm = new HashMap<>();
