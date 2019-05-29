@@ -9,7 +9,7 @@ package main.kotlin.Easy
  * 输出: "fl"
  *
  * 示例 2:
- * 输入: ["dog","racecar","car"]
+ * 输入: ["dog","racer","car"]
  * 输出: ""
  * 解释: 输入不存在公共前缀。
  *
@@ -17,14 +17,14 @@ package main.kotlin.Easy
  * 所有输入只包含小写字母 a-z 。
  */
 private fun longestCommonPrefix(strs: Array<String>): String {
-    if (strs == null || strs.size == 0) {
+    if (strs.isEmpty()) {
         return ""
     }
 
     var prefix: String = strs[0]
-    for (i: Int in 1..strs.size - 1) {
+    for (i: Int in 1 until strs.size) {
         prefix = findPrefix(strs[i], prefix)
-        if ("".equals(prefix)) {
+        if ("" == prefix) {
             return ""
         }
     }
