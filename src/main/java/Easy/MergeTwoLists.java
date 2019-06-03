@@ -11,7 +11,7 @@ import main.common.module.ListNode;
  */
 public class MergeTwoLists {
 
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+    private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode rspHead = new ListNode(0);
         ListNode rsp = rspHead;
 

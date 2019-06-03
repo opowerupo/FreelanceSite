@@ -18,7 +18,7 @@ package main.java.Easy;
  */
 public class LongestCommonPrefix {
 
-    public String longestCommonPrefix(String[] strs) {
+     public String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) {
             return "";
         }
