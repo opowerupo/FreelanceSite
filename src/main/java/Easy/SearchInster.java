@@ -20,27 +20,31 @@ package main.java.Easy;
  * 示例 4:
  * 输入: [1,3,5,6], 0
  * 输出: 0
+ *
+ * 解题思路：
+ * 1.顺序比较返回位置
+ * 2.二分查找
  */
 public class SearchInster {
-
+    //顺序查找
     public int searchInster(int[] nums, int target) {
-        int start = 0;
-        int end = nums.length / 2;
-        int len = nums.length;
-
-        if (target >= nums[end]) {
-            start = end;
-            end = nums.length;
+        for (int i = 0; i < nums.length; i++) {
+            if (target <= nums[i]) {
+                return i;
+            }
         }
+        return nums.length;
+    }
 
-        for (int i = start; i < end; i++) {
-
-        }
+    //2分查找
+    public int searchInster_2(int[] nums, int target) {
 
         return 0;
     }
 
     public static void main(String[] args) {
-
+        SearchInster si = new SearchInster();
+        int res = si.searchInster(new int[]{1, 2, 3, 8}, 7);
+        System.out.println(res);
     }
 }
