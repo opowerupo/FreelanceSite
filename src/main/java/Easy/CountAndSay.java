@@ -8,9 +8,10 @@ package main.java.Easy;
  * 3. 21
  * 4. 1211
  * 5. 111221
- * 6. 21112211
- * 7. 1221112221
- * 8. 11222111221211
+ * 6. 312211
+ * 7. 13112221
+ * 8. 1113213211
+ * 9. 31131211131221
  *
  * 1 被读作 "one 1" ("一个一") , 即 11。
  * 11 被读作 "two 1s" ("两个一"）, 即21。
@@ -29,14 +30,35 @@ package main.java.Easy;
  */
 public class CountAndSay {
     public String countAndSay(int n) {
-        for (int i = 1; i <= n; i++) {
-            
+        StringBuilder ans = new StringBuilder();
+        ans.append("1");
+        for (int i = 2; i <= n ; i++) {
+            //遍历前一个字符串
+            String currentStr = new String(ans);
+            ans.delete(0,ans.length());
+            int num = 0;
+            char currentChar = currentStr.charAt(0);
+            for (char c : currentStr.toCharArray()) {
+                if(c == currentChar){
+                    num++;
+                }
+                else{
+                    ans.append((char)('0'+num));
+                    ans.append(currentChar);
+                    currentChar = c;
+                    num = 1;
+                }
+            }
+            ans.append((char)('0'+num));
+            ans.append(currentChar);
         }
 
-        return "";
+        return ans.toString();
     }
 
     public static void main(String[] args) {
-
+        CountAndSay cas = new CountAndSay();
+        String res = cas.countAndSay(5);
+        System.out.println(res);
     }
 }
