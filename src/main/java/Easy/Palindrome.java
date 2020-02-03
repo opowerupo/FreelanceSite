@@ -28,9 +28,10 @@ public class Palindrome {
 
         int num = 0;
         while (x > num) {
-            num = num * 10 + x % 10;
+            num = num * 10 + x % 10;// x%10就是模10 相当于除以10取余数 也就是x末尾的数字
             x /= 10;
         }
+        System.out.println(x + " : " + num);
         if (x == num || x == num / 10) {
             return true;
         }
@@ -40,7 +41,7 @@ public class Palindrome {
 
     public static void main(String[] args) {
         Palindrome pal = new Palindrome();
-        boolean res = pal.isPalindrom(10);
+        boolean res = pal.isPalindrom(12344321);
         System.out.println(res);
     }
 }
