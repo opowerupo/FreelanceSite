@@ -15,6 +15,9 @@ package main.java.Easy;
  * 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
  * 注意这五个元素可为任意顺序。
  * 你不需要考虑数组中超出新长度后面的元素。
+ *
+ * 解题：
+ * 快慢双指针
  */
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {

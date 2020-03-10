@@ -30,6 +30,7 @@ public class TwoSum {
     public static void main(String[] args) {
         TwoSum ts = new TwoSum();
         int[] res = ts.twoSum(new int[]{1, 8, 6, 7}, 9);
+
         StringBuilder sb = new StringBuilder(5);
         sb.append("[");
         for (int val : res) {

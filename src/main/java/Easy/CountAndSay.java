@@ -32,12 +32,15 @@ public class CountAndSay {
     public String countAndSay(int n) {
         StringBuilder ans = new StringBuilder();
         ans.append("1");
+        String currentStr = null;
+        int num = 0;
+        char currentChar;
         for (int i = 2; i <= n ; i++) {
             //遍历前一个字符串
-            String currentStr = new String(ans);
+            currentStr = new String(ans);
             ans.delete(0,ans.length());
-            int num = 0;
-            char currentChar = currentStr.charAt(0);
+            num = 0;
+            currentChar = currentStr.charAt(0);
             for (char c : currentStr.toCharArray()) {
                 if(c == currentChar){
                     num++;
@@ -58,7 +61,7 @@ public class CountAndSay {
 
     public static void main(String[] args) {
         CountAndSay cas = new CountAndSay();
-        String res = cas.countAndSay(5);
+        String res = cas.countAndSay(3);
         System.out.println(res);
     }
 }

@@ -41,9 +41,10 @@ public class RemoveDuplicates {
         RemoveDuplicates rdl = new RemoveDuplicates();
         int[] nums = new int[]{1, 1, 1, 2};
         int res = rdl.removeDuplicates(nums);
+
         StringBuilder resBuilder = new StringBuilder(res + " : [");
-        for (int i : nums) {
-            resBuilder.append(i).append(",");
+        for (int i = 0; i < res; i++) {
+            resBuilder.append(nums[i]).append(",");
         }
         resBuilder.delete(resBuilder.length() - 1, resBuilder.length());
         resBuilder.append("]");

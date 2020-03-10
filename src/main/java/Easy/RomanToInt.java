@@ -91,7 +91,7 @@ public class RomanToInt {
 
     public static void main(String[] args) {
         RomanToInt rti = new RomanToInt();
-        int result = rti.romanToInt("LIV");
+        int result = rti.romanToInt("LVIII");
         System.out.println(result);
     }
 }

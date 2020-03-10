@@ -41,7 +41,7 @@ public class LongestCommonPrefix {
 
     public static void main(String[] args) {
         LongestCommonPrefix lcp = new LongestCommonPrefix();
-        String res = lcp.longestCommonPrefix(new String[]{"ac", "ac", "a", "a"});
+        String res = lcp.longestCommonPrefix(new String[]{"acll", "acb", "a", "a"});
         System.out.println(res);
 
     }
